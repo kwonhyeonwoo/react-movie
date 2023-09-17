@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
     width: 100%;
+    padding-bottom:50px;
 `
 export const Container = styled.div`
     display: flex;
@@ -13,9 +14,15 @@ export const Container = styled.div`
 `
 export const HomeAddress = styled.address`
     margin-bottom:14px;
+    text-align: center;
+    line-height: 20px;
+    span{
+        display: block;
+    }
 `
 export const Contact = styled.div`
     line-height: 24px;
+    text-align: center;
     .phone ,.email{
         font-weight: bold;
        
