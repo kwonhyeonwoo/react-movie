@@ -47,7 +47,6 @@ export interface IGetMoviesResult {
 const Home = () => {
     // now play movie 
     const { data, isLoading } = useQuery(['movies', 'nowPlaying'], getMovies);
-    console.log('REACT_APP', process.env.REACT_APP_BASE_URL);
     // reted movie 
     const { data: RetedTv } = useQuery(['movies2', 'nowPlaying2'], getRetedTv);
 

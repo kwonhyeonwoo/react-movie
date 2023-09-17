@@ -18,9 +18,9 @@ function App() {
         <GlobalStyle />
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tv" element={<Tv />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/react-movie" element={<Home />} />
+          <Route path="/react-movie/tv" element={<Tv />} />
+          <Route path="/react-movie/search" element={<Search />} />
         </Routes>
         <Footer />
       </QueryClientProvider>
