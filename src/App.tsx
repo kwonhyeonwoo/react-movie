@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Tv from './components/Tv/Tv';
+import Search from './components/Search/Search';
+import GlobalStyle from './GlobalStyle/GlobalStyle';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Footer from './components/Footer/Footer';
+
+const client = new QueryClient();
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <QueryClientProvider client={client}>
+        <GlobalStyle />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tv" element={<Tv />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+        <Footer />
+      </QueryClientProvider>
+
+    </BrowserRouter>
   );
 }
 
